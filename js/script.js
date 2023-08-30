@@ -1,9 +1,10 @@
-import { tailoring } from './objectTailoringItems.js';
-import { leatherworking } from './objectLeatherworkingItems.js';
-import { blacksmithing } from './objectBlacksmithingItems.js';
-import { carpentry } from './objectCarpentryItems.js';
+import { tailoring } from "./objectTailoringItems.js";
+import { leatherworking } from "./objectLeatherworkingItems.js";
+import { blacksmithing } from "./objectBlacksmithingItems.js";
+import { carpentry } from "./objectCarpentryItems.js";
 
-const buttonContainer = document.querySelector(".button-container");''
+const buttonContainer = document.querySelector(".button-container");
+("");
 
 const btnTailoring = document.querySelector("#btnTailoring");
 const btnBlacksmithing = document.querySelector("#btnBlacksmithing");
