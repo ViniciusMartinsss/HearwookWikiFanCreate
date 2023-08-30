@@ -1,0 +1,366 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --ligh-green: #8BAA75;
+    --mediun-green:#446644;
+    --light-brown: #DAC594;
+    --mediun-bronw:#AD905B;
+    --dark-bronw:#655133;
+    --honey-brown: #8C6E36;
+    --shadow-black: rgba(0, 0, 0, 0.300);
+}
+
+button{
+    width: auto;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--light-brown);   
+    color: white;
+}
+
+.header-box{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 130px;
+    background-color: var(--mediun-green);
+    /* background-color: var(--ligh-green); */
+}
+
+#bar-brown{
+    height: 20px;
+    width: 100%;
+    background-color: var(--dark-bronw);
+}
+
+.box-category{
+    width: 400px;
+    height: 500px;
+}
+
+.navbar{
+    min-width: 1080px;
+    display: flex;
+    gap: .6rem;
+    height: 50px;
+    margin: 10px 0px 30px 0px;
+}
+ 
+.btn-nav{
+    width: 265px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-image: url(../img/button.png);
+    transition: all 150ms;
+}
+
+.btn-nav:hover{
+    color: #F9DF16;
+    font-size: 18px;
+}
+
+.content-card-body{
+    height: 60vh;
+    min-width: 1080px;
+    gap: 0.5rem;
+    margin: 0rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.crafting-calculator-box{
+    width: 70%;
+    height: 100%;
+}
+
+.category-box{
+   min-width: 30%;
+    height: 100%;
+}
+
+.box-title{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 3px black;
+    background-color: var(--mediun-bronw);
+} 
+ 
+.containerCategory{
+    width: 100%;
+    height: 100%;
+    margin-top: 0.5rem;
+    border-radius: 0px 0px 0px 5px ; 
+    background-color: var(--dark-bronw);
+    box-shadow: 5px 5px 5px var(--shadow-black);
+}
+
+.containerCalculator{
+    width: 100%;
+    height: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--dark-bronw);
+    box-shadow: 5px 5px 5px var(--shadow-black);
+    border-radius: 0px 0px 5px 0px ;
+}
+
+.button-container {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    gap: 0.5rem;
+    overflow-y: auto;
+}
+
+.button-container > button {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: var(--mediun-bronw);
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 4px 4px 4px var(--shadow-black);
+    transition: all 150ms;
+    text-shadow: 2px 2px 3px black;
+}
+
+.item-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.item-list > div {
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: end;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;  
+}
+
+.item-list > div > a {
+    width: 100%;
+    font-size: 1.1rem;
+    padding-left: 1rem;
+    text-shadow: 2px 2px 3px black;   
+}
+
+.item-list > div > a:hover {
+    cursor: pointer;
+    text-decoration: underline;  
+}
+
+.item-list > div > img{
+    width: 25px;
+    height: 25px;
+}
+
+.containerTitle{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: auto;
+    padding: 1rem;
+}
+
+.cardItemHeader {   
+    width: 100%;
+    height: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 2px 2px 3px black; 
+}
+
+#itemName, #itemDesc{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0px 5px 5px 0px;
+    padding: .5rem;
+    text-shadow: 2px 2px 3px black; 
+}
+
+#itemName{
+    height: 100%;
+    font-size: 2rem;
+    background-color: var(--mediun-bronw);
+    box-shadow: 5px 5px 5px var(--shadow-black);
+}
+#itemDesc{
+    font-size: 1rem;
+}
+
+.imgItem {
+    height: 60px;
+    min-width: 60px;
+    background-color: var(--mediun-bronw);
+    box-shadow: 5px 5px 5px var(--shadow-black);
+    padding: 1rem ;
+    border-radius: 5px 0px 0px 5px; 
+}
+
+.cardItemBody{
+    width: 100%;
+    margin-top: 1rem;
+    flex-direction: column;
+    text-shadow: 2px 1px 3px black;
+}
+
+.cardItemBody > h1 {
+    font-size: 1.3rem;
+    padding: .3rem;
+    border-radius: 5px 5px 0px 0px;
+    margin-bottom: .2rem;
+    background-color: var(--honey-brown);
+}
+
+.cardItemBody > p {
+    width: 100%;
+    display: grid;
+    padding: .1rem .2rem;
+    align-items: center;
+    grid-template-columns: 85% 15%;
+    font-size: 1.1rem;
+    background-color: var(--mediun-bronw);
+}
+
+.cardItemBody > p > span {
+    width: 100%;
+    text-align: end;
+    padding-right: .3rem;
+}
+
+#itemDefault, #itemDefaultRecipe, #itemDefaultQuantidade{
+    font-size: 1.5rem;
+    color: #F9DF16;
+}
+
+#itemXp{
+    font-size: 1.5rem;
+    color: #00c3ff;
+}
+
+.buttonRangeContainer{
+    height: 80px;
+    width: 500px;
+    display: grid;
+    gap: 1rem ;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto auto;
+    padding: 1rem;
+}
+
+.buttonRangeContainer > input {
+    width: 120px;
+    height: 100%;
+    text-align: center;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    font-size: 1.5rem;
+    transform: translateY(-3px);
+    text-shadow: 2px 1px 2px black;   
+}
+
+.numberInput {
+-moz-appearance: textfield; 
+appearance: textfield; 
+} 
+
+.numberInput::-webkit-inner-spin-button,
+.numberInput::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.separate{
+    width: 100%;
+}
+
+.aninButton{
+    border-radius: 5px;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+
+.aninButton span{
+    width: 100px;
+    height: 50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:bold;
+    font-size:2rem;
+    color: #fff;
+    /* text-shadow: 0px 1px 0px #000;   */
+    
+}
+
+.aninButton {
+    background: hsl(45deg 100% 32%); 
+}
+
+.front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    background: hsl(45deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+}
+
+.aninButton:active .front {
+    transform: translateY(-2px);
+}
+
+
+    /* .narvbar{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .content-card-body{
+        display: flex;
+        flex-direction: column;
+    } */
+

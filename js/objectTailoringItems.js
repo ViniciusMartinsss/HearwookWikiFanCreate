@@ -1,0 +1,82 @@
+const tailoring = [
+  {
+    id: 0,
+    nome: "Light Cotton Fabric",
+    descricao: "Refined fabric used to craft equipament.",
+    categoria: "items",
+    img: "../img/itemsicon/Light-cotton-icon.png",
+    receita: ["Cotton", 3],
+    nivel: 0,
+    quantidade: 1,
+    xp: 203,
+  },
+  {
+    id: 1,
+    nome: "Trhead",
+    descricao:
+      "Refined fabric used to craft equipament. Refined fabric used to craft equipament. Refined fabric used to craft equipament.",
+    categoria: "items",
+    receita: "",
+    img: "../img/itemsicon/thred-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+
+  {
+    id: 2,
+    nome: "Light Mantle",
+    categoria: "chest",
+    img: "../img/itemsicon/Light-Mantle-icon.png",
+    receita: "",
+    quantidade: 1,
+    xp: 203,
+  },
+  {
+    id: 3,
+    nome: "Light Vestments",
+    categoria: "chest",
+    receita: "",
+    img: "../img/itemsicon/Light-Vestments-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+  {
+    id: 4,
+    nome: "Light Robes",
+    categoria: "chest",
+    receita: "",
+    img: "../img/itemsicon/Light-Robes-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+  {
+    id: 5,
+    nome: "Light Trousers",
+    categoria: "legs",
+    receita: "",
+    img: "../img/itemsicon/Light-Trousers-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+  {
+    id: 6,
+    nome: "Light Waders",
+    categoria: "legs",
+    receita: "",
+    img: "../img/itemsicon/Light-Waders-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+  {
+    id: 7,
+    nome: "Light Slippers",
+    categoria: "feet",
+    receita: "",
+    img: "../img/itemsicon/Light-Slippers-icon.png",
+    quantidade: 1,
+    xp: 504,
+  },
+];
+
+
+export { tailoring };
