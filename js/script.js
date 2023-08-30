@@ -16,13 +16,13 @@ btnTailoring.addEventListener("click", () => {
   btnTailoring.style.color = "#F9DF16";
 
   btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "1rem";
+  btnLeatherworking.style.fontSize = "13px";
 
   btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "1rem";
+  btnBlacksmithing.style.fontSize = "13px";
 
   btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "1rem";
+  btnCarpentry.style.fontSize = "13px";
 
   buttonContainer.innerHTML = "";
   createCategory(dados);
@@ -40,13 +40,13 @@ btnLeatherworking.addEventListener("click", () => {
   btnLeatherworking.style.fontSize = "1.2rem";
 
   btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "1rem";
+  btnTailoring.style.fontSize = "13px";
 
   btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "1rem";
+  btnBlacksmithing.style.fontSize = "13px";
 
   btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "1rem";
+  btnCarpentry.style.fontSize = "13px";
 
   buttonContainer.innerHTML = "";
   createCategory(dados);
@@ -64,13 +64,13 @@ btnBlacksmithing.addEventListener("click", () => {
   btnBlacksmithing.style.color = "#F9DF16";
 
   btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "1rem";
+  btnLeatherworking.style.fontSize = "13px ";
 
   btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "1rem";
+  btnTailoring.style.fontSize = "13px";
 
   btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "1rem";
+  btnCarpentry.style.fontSize = "13px";
 
   buttonContainer.innerHTML = "";
   createCategory(dados);
@@ -87,13 +87,13 @@ btnCarpentry.addEventListener("click", () => {
   btnCarpentry.style.color = "#F9DF16";
 
   btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "1rem";
+  btnLeatherworking.style.fontSize = "13px ";
 
   btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "1rem";
+  btnBlacksmithing.style.fontSize = "13px";
 
   btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "1rem";
+  btnTailoring.style.fontSize = "13px";
 
   buttonContainer.innerHTML = "";
   createCategory(dados);
