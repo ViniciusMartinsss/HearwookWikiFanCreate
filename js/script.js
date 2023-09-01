@@ -52,7 +52,7 @@ function resetButtonStyles(buttons, selectedButton) {
     button.style.fontSize = "13px";
     button.style.color = "#FFFF";
   });
-  selectedButton.style.fontSize = "1.2rem";
+  selectedButton.style.fontSize = "16px";
   selectedButton.style.color = "#F9DF16";
 }
 
