@@ -10,99 +10,51 @@ const btnBlacksmithing = document.querySelector("#btnBlacksmithing");
 const btnCarpentry = document.querySelector("#btnCarpentry");
 const btnLeatherworking = document.querySelector("#btnLeatherworking");
 
-btnTailoring.addEventListener("click", () => {
-  let dados = tailoring;
-  btnTailoring.style.fontSize = "1.2rem";
-  btnTailoring.style.color = "#F9DF16";
+// Adicione o atributo data-category a cada botão para identificar sua categoria.
+btnTailoring.setAttribute("data-category", "tailoring");
+btnLeatherworking.setAttribute("data-category", "leatherworking");
+btnBlacksmithing.setAttribute("data-category", "blacksmithing");
+btnCarpentry.setAttribute("data-category", "carpentry");
 
-  btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "13px";
+function getCategoryData(category) {
+  switch (category) {
+    case "tailoring":
+      return tailoring;
+    case "leatherworking":
+      return leatherworking;
+    case "blacksmithing":
+      return blacksmithing;
+    case "carpentry":
+      return carpentry;
+    default:
+      return [];
+  }
+}
 
-  btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "13px";
+const categoryButtons = [btnTailoring, btnLeatherworking, btnBlacksmithing, btnCarpentry];
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.getAttribute("data-category");
+    const dados = getCategoryData(category);
+    resetButtonStyles(categoryButtons, button);
+    buttonContainer.innerHTML = "";
+    createCategory(dados);
 
-  btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "13px";
-
-  buttonContainer.innerHTML = "";
-  createCategory(dados);
-
-  const itemClicked = document.querySelector(".itemClicked");
-  const listClicked = document.getElementsByTagName("A");
-  itemClicked.click();
-  listClicked[0].click();
+    const itemClicked = document.querySelector(".itemClicked");
+    const listClicked = document.getElementsByTagName("A");
+    itemClicked.click();
+    listClicked[0].click();
+  });
 });
 
-btnLeatherworking.addEventListener("click", () => {
-  let dados = leatherworking;
-
-  btnLeatherworking.style.color = "#F9DF16";
-  btnLeatherworking.style.fontSize = "1.2rem";
-
-  btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "13px";
-
-  btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "13px";
-
-  btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "13px";
-
-  buttonContainer.innerHTML = "";
-  createCategory(dados);
-
-  const itemClicked = document.querySelector(".itemClicked");
-  const listClicked = document.getElementsByTagName("A");
-  itemClicked.click();
-  listClicked[0].click();
-});
-
-btnBlacksmithing.addEventListener("click", () => {
-  let dados = blacksmithing;
-
-  btnBlacksmithing.style.fontSize = "1.2rem";
-  btnBlacksmithing.style.color = "#F9DF16";
-
-  btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "13px ";
-
-  btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "13px";
-
-  btnCarpentry.style.color = "#FFFF";
-  btnCarpentry.style.fontSize = "13px";
-
-  buttonContainer.innerHTML = "";
-  createCategory(dados);
-
-  const itemClicked = document.querySelector(".itemClicked");
-  const listClicked = document.getElementsByTagName("A");
-  itemClicked.click();
-  listClicked[0].click();
-});
-
-btnCarpentry.addEventListener("click", () => {
-  let dados = carpentry;
-  btnCarpentry.style.fontSize = "1.2rem";
-  btnCarpentry.style.color = "#F9DF16";
-
-  btnLeatherworking.style.color = "#FFFF";
-  btnLeatherworking.style.fontSize = "13px ";
-
-  btnBlacksmithing.style.color = "#FFFF";
-  btnBlacksmithing.style.fontSize = "13px";
-
-  btnTailoring.style.color = "#FFFF";
-  btnTailoring.style.fontSize = "13px";
-
-  buttonContainer.innerHTML = "";
-  createCategory(dados);
-
-  const itemClicked = document.querySelector(".itemClicked");
-  const listClicked = document.getElementsByTagName("A");
-  itemClicked.click();
-  listClicked[0].click();
-});
+function resetButtonStyles(buttons, selectedButton) {
+  buttons.forEach((button) => {
+    button.style.fontSize = "13px";
+    button.style.color = "#FFFF";
+  });
+  selectedButton.style.fontSize = "1.2rem";
+  selectedButton.style.color = "#F9DF16";
+}
 
 function createCategory(dados) {
   const createCategoryButtons = (categories) => {
