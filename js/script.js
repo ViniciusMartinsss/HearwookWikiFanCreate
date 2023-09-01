@@ -209,7 +209,7 @@ const createCalculaotor = (objectItem) => {
           <span class="front" id="subtrai">-</span>
         </div>
 
-        <input type="number" class="numberInput" value="1" maxlength="4" min="1" max="1000">
+        <input type="number" class="numberInput" value="1" maxlength="3" min="1" max="999" required>
         
         <div class="aninButton">
             <span class="front" id="adiciona">+</span>
@@ -228,7 +228,7 @@ const createCalculaotor = (objectItem) => {
   const subtractButton = document.getElementById("subtrai");
 
   addButton.addEventListener("click", () => {
-    numberInput.value = Math.min(parseInt(numberInput.value) + 1, 1001);
+    numberInput.value = Math.min(parseInt(numberInput.value) + 1, 999);
     updatePage();
   });
 
@@ -238,7 +238,16 @@ const createCalculaotor = (objectItem) => {
   });
 
   numberInput.addEventListener("input", () => {
-    numberInput.value = Math.max(Math.min(parseInt(numberInput.value), 1001), 1);
+    numberInput.value = Math.max(Math.min(parseInt(numberInput.value), 999),1);
+    let inputValue = parseInt(numberInput.value);
+
+    // Verifique se o valor é menor que 1 e ajuste-o para 1
+    if (isNaN(inputValue) || inputValue < 1) {
+      inputValue = 1;
+    }
+    // Defina o valor corrigido no input
+    numberInput.value = inputValue;
+  
     updatePage();
   });
 
