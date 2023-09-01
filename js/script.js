@@ -2,10 +2,9 @@ import { tailoring } from "./objectTailoringItems.js";
 import { leatherworking } from "./objectLeatherworkingItems.js";
 import { blacksmithing } from "./objectBlacksmithingItems.js";
 import { carpentry } from "./objectCarpentryItems.js";
+import { professionLevels } from "./professionLevel.js";
 
 const buttonContainer = document.querySelector(".button-container");
-("");
-
 const btnTailoring = document.querySelector("#btnTailoring");
 const btnBlacksmithing = document.querySelector("#btnBlacksmithing");
 const btnCarpentry = document.querySelector("#btnCarpentry");
@@ -127,7 +126,7 @@ function createCategory(dados) {
     const itemList = document.querySelector(
       `.item-list[data-category="${category}"]`
     );
-    const itemsByCategory = dados.filter((item) => item.categoria === category);
+    const itemsByCategory = dados.filter((item) => item.category === category);
 
     if (itemList.style.display === "none" || itemList.innerHTML === "") {
       itemList.style.display = "block";
@@ -137,8 +136,8 @@ function createCategory(dados) {
         const itemElement = document.createElement("div");
         itemElement.classList.add("item");
         itemElement.innerHTML = `
-                    <img src="${item.img}" alt="${item.nome}">
-                    <a class="item-link" data-id="${item.id}">${item.nome}</a>
+                    <img src="${item.img}" alt="${item.name}">
+                    <a class="item-link" data-id="${item.id}">${item.name}</a>
                 `;
         itemList.appendChild(itemElement);
       });
@@ -165,7 +164,7 @@ function createCategory(dados) {
     }
   };
 
-  const uniqueCategories = [...new Set(dados.map((item) => item.categoria))];
+  const uniqueCategories = [...new Set(dados.map((item) => item.category))];
   createCategoryButtons(uniqueCategories);
 }
 
@@ -178,29 +177,39 @@ const createCalculaotor = (objectItem) => {
   itemHeaderContainer.classList.add("containerTitle");
 
   itemHeaderContainer.innerHTML = `
-    <div class="separate">    
+    <div class="separate">
+      <div class="progress">
+        <span id="level"></span> 
+        <div class="progress-bar"><div id="progressText"></div> </div>
+      </div>  
       <div class="cardItemHeader">
           <img class="imgItem" src="${objectItem.img}">
-          <p id="itemName">${objectItem.nome}</p>   
+          <p id="itemName">${objectItem.name}</p>   
       </div>
-      <p id="itemDesc">Descrição: ${objectItem.descricao}</p>     
-        <div class="cardItemBody">
-            <h1>Requirements:</h1>
-            <p id="itemRecipe">- ${objectItem.receita[0]}: <span id="itemDefaultRecipe">${objectItem.receita[1]}</span></p>
-            <p id="itemNivel">- Craft Level: <span id="itemDefault">${objectItem.nivel}</span></p>    
-        </div>
-        <div class="cardItemBody">
-            <h1>Receive:</h1>
-            <p>- ${objectItem.nome}: <span id="itemDefaultQuantidade">${objectItem.quantidade}</span></p>
-            <p>- XP: <span id="itemXp" data-id="${objectItem.xp}">${objectItem.xp}</span></p>    
-        </div>
+      <!--<p id="itemDesc">Descrição: ${objectItem.descript}</p> -->    
+      <div class="cardItemBody">
+          <h1>Requirements:</h1>
+          <p id="itemRecipe"><img id="imgRecipe" src="${objectItem.recipe[0]}">- ${objectItem.recipe[1]} <span id="itemDefaultRecipe">${objectItem.recipe[2]}</span></p>
+          <p id="itemNivel"><img id="imgRecipe" src="${objectItem.level[0]}">- Level <span id="itemDefault">${objectItem.level[1]}</span></p>    
+      </div>
+      <div class="cardItemBody">
+          <h1>Receive:</h1>
+          <p><img src="${objectItem.img}">- ${objectItem.name} <span id="itemDefaultQuantidade">${objectItem.quantity}</span></p>
+          <p><img id="imgRecipe"src="${objectItem.xp[0]}">- Xp <span id="itemXp" data-id="${objectItem.xp[1]}">${objectItem.xp[1]}</span></p>    
+      </div>
     </div>
-    <div class="buttonRangeContainer">  
+    <div class="buttonRangeContainer">
+      <div>
+          <label for="selectLevel">Select Level: </label>
+          <select id="selectLevel">
+              
+          </select>
+      </div>   
         <div class="aninButton">
           <span class="front" id="subtrai">-</span>
         </div>
 
-        <input type="number" class="numberInput" value="1" maxlength="3" min="1" max="300">
+        <input type="number" class="numberInput" value="1" maxlength="4" min="1" max="1000">
         
         <div class="aninButton">
             <span class="front" id="adiciona">+</span>
@@ -209,12 +218,17 @@ const createCalculaotor = (objectItem) => {
     `;
   containerCalculator.appendChild(itemHeaderContainer);
 
+  const selectLevel = document.getElementById("selectLevel");
+  const progressText = document.getElementById("progressText");
+  const levelSpan = document.getElementById("level");
+  const progressBar = document.querySelector(".progress-bar")
+
   const numberInput = document.querySelector(".numberInput");
   const addButton = document.getElementById("adiciona");
   const subtractButton = document.getElementById("subtrai");
 
   addButton.addEventListener("click", () => {
-    numberInput.value = Math.min(parseInt(numberInput.value) + 1, 300);
+    numberInput.value = Math.min(parseInt(numberInput.value) + 1, 1001);
     updatePage();
   });
 
@@ -224,23 +238,63 @@ const createCalculaotor = (objectItem) => {
   });
 
   numberInput.addEventListener("input", () => {
-    numberInput.value = Math.max(Math.min(parseInt(numberInput.value), 300), 1);
+    numberInput.value = Math.max(Math.min(parseInt(numberInput.value), 1001), 1);
     updatePage();
   });
 
+  // Preencher as opções do seletor de nível
+  professionLevels.forEach((_, index) => {
+    const option = document.createElement("option");
+    option.value = index;
+    option.textContent = `Level ${index}`;
+    selectLevel.appendChild(option);
+  });
+
+  // Manipular a seleção de nível
+  selectLevel.addEventListener("change", (event) => {
+    const selectedLevel = parseInt(event.target.value);
+    levelSpan.textContent = selectedLevel;
+    numberInput.value = 1; // Reinicia o input para o valor mínimo
+    updateProgressBar(objectItem.xp[1], selectedLevel);
+  });
+
+  function updateProgressBar(currentXP, selectedLevel) {
+    const nextLevelXP = professionLevels[selectedLevel];
+    const progressPercentage = (currentXP / nextLevelXP) * 100; // Limita o preenchimento a 100%
+
+    progressBar.style.width = `${progressPercentage}%`; // Atualiza a largura da barra de progresso
+    progressText.textContent = `${currentXP} / ${nextLevelXP.toLocaleString("pt-BR")}`;
+  }
+
   function updatePage() {
     const multiplier = parseInt(numberInput.value);
-
+  
     const itemDefaultRecipe = document.getElementById("itemDefaultRecipe");
-    itemDefaultRecipe.textContent = objectItem.receita[1] * multiplier;
-
-    const itemDefaultQuantidade = document.getElementById(
-      "itemDefaultQuantidade"
-    );
-
-    itemDefaultQuantidade.textContent = objectItem.quantidade * multiplier;
-
+    itemDefaultRecipe.textContent = objectItem.recipe[2] * multiplier;
+  
+    const itemDefaultQuantidade = document.getElementById("itemDefaultQuantidade");
+    itemDefaultQuantidade.textContent = objectItem.quantity * multiplier;
+  
     const itemXp = document.getElementById("itemXp");
-    itemXp.textContent = (objectItem.xp * multiplier).toLocaleString("pt-BR");
+    itemXp.textContent = (objectItem.xp[1] * multiplier).toLocaleString("pt-BR");
+  
+    let totalXP = objectItem.xp[1] * multiplier;
+    let selectedLevel = parseInt(levelSpan.textContent);
+  
+    // Subtrai o XP necessário para atingir o próximo nível
+    while (
+      selectedLevel <= professionLevels.length && totalXP >= professionLevels[selectedLevel]) {
+      selectedLevel++; // Aumenta o nível
+      
+      totalXP = objectItem.xp[1];
+    }
+  
+    // Atualiza o nível e a barra de progresso
+    levelSpan.textContent = selectedLevel;
+    updateProgressBar(totalXP, selectedLevel);
   }
+  
+  // Inicialização padrão com o primeiro nível
+  levelSpan.textContent = 0;
+  updateProgressBar(objectItem.xp[1], 0);
 };

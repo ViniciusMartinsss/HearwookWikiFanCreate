@@ -205,7 +205,7 @@ body{
 .cardItemHeader {   
     width: 100%;
     height: 60px;
-    margin-bottom: 1rem;
+    margin: 1rem 1rem 0rem 0rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -230,14 +230,24 @@ body{
     font-size: 1rem;
 }
 
+#imgRecipe{
+    height: 16px;
+    width: 16px;
+}
+
+#opc{
+    opacity: 0;
+}
+
 .imgItem {
     height: 60px;
     min-width: 60px;
     background-color: var(--mediun-bronw);
     box-shadow: 5px 5px 5px var(--shadow-black);
-    padding: 1rem ;
+    padding: 0.7rem ;
     border-radius: 5px 0px 0px 5px; 
 }
+
 
 .cardItemBody{
     width: 100%;
@@ -251,15 +261,16 @@ body{
     padding: .3rem;
     border-radius: 5px 5px 0px 0px;
     margin-bottom: .2rem;
-    background-color: var(--honey-brown);
+    background-color: var(--mediun-green);
 }
 
 .cardItemBody > p {
     width: 100%;
     display: grid;
-    padding: .1rem .2rem;
+    grid-template-columns: 3% 82% 15%;
     align-items: center;
-    grid-template-columns: 85% 15%;
+    padding: .1rem .2rem;
+
     font-size: 1.1rem;
     background-color: var(--mediun-bronw);
 }
@@ -267,7 +278,7 @@ body{
 .cardItemBody > p > span {
     width: 100%;
     text-align: end;
-    padding-right: .3rem;
+    padding-right: .4rem;
 }
 
 #itemDefault, #itemDefaultRecipe, #itemDefaultQuantidade{
@@ -282,13 +293,13 @@ body{
 
 .buttonRangeContainer{
     height: 80px;
-    width: 500px;
+    width: 100%;
     display: grid;
     gap: 1rem ;
     border-radius: 20px;
     align-items: center;
     justify-content: center;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     padding: 1rem;
 }
 
@@ -358,8 +369,55 @@ margin: 0;
     transform: translateY(-2px);
 }
 
+select, option{
+    color: black;
+    height: 30px;
+    width: 100px;
+}
 
-@media only screen and (max-width: 1150px) {
+
+#level{  
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+}
+
+/* Level Progress Bar */
+.progress {
+    width: 100%;
+    height: 30px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+    gap: 0.3rem;
+    background-color: var(--mediun-bronw);
+    padding: .2rem;
+    border-radius: 5px;
+    text-shadow: 1px 1px 3px black;
+}
+
+.progress-bar {
+    width: 0;
+    margin: 0;
+    height: 100%;
+    background-color: var(--mediun-green);
+    transition: all .5s;
+    border-radius: 5px;
+}
+#progressText{
+    position: absolute;
+    width: 300px;
+    margin: 5px 260px; 
+}
+
+/* Media querys */
+
+@media only screen and (max-width: 1100px) {
     .navbar{
         flex-wrap: wrap;
         gap: .5rem;
@@ -386,7 +444,6 @@ margin: 0;
         height: 235px;
         transition: all 700ms;
     }
-    
     .crafting-calculator-box{
         width: 100%;
         height: 500px;
@@ -428,9 +485,14 @@ margin: 0;
         gap: 1rem;
     }
     .cardItemBody > p{
-        grid-template-columns: 65% 35%;
+        grid-template-columns: 5% 40% 55%;
     }
     .containerCategory, .containerCalculator{
         border-radius: 5px;
+    }
+    #progressText{
+        position: absolute;
+        width: 100px;
+        margin: 5px 120px; 
     }
 }
