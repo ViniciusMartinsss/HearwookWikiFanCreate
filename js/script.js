@@ -88,9 +88,9 @@ function createCategory(dados) {
         const itemElement = document.createElement("div");
         itemElement.classList.add("item");
         itemElement.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}">
-                    <a class="item-link" data-id="${item.id}">${item.name}</a>
-                `;
+            <img src="${item.img}" alt="${item.name}">
+            <a class="item-link" data-id="${item.id}">${item.name}</a>
+        `;
         itemList.appendChild(itemElement);
       });
 
@@ -141,13 +141,13 @@ const createCalculaotor = (objectItem) => {
       <!--<p id="itemDesc">Descrição: ${objectItem.descript}</p> -->    
       <div class="cardItemBody">
           <h1>Requirements:</h1>
-          <p id="itemRecipe"><img id="imgRecipe" src="${objectItem.recipe[0]}">- ${objectItem.recipe[1]} <span id="itemDefaultRecipe">${objectItem.recipe[2]}</span></p>
-          <p id="itemNivel"><img id="imgRecipe" src="${objectItem.level[0]}">- Level <span id="itemDefault">${objectItem.level[1]}</span></p>    
+          <p><img id="imgRecipe" src="${objectItem.recipe[0]}"><i>-</i>${objectItem.recipe[1]} <span id="itemDefaultRecipe">${objectItem.recipe[2]}</span></p>
+          <p id="itemNivel"><img id="imgRecipe" src="${objectItem.level[0]}"><i>-</i>Level<span id="itemDefault">${objectItem.level[1]}</span></p>    
       </div>
       <div class="cardItemBody">
           <h1>Receive:</h1>
-          <p><img src="${objectItem.img}">- ${objectItem.name} <span id="itemDefaultQuantidade">${objectItem.quantity}</span></p>
-          <p><img id="imgRecipe"src="${objectItem.xp[0]}">- Xp <span id="itemXp" data-id="${objectItem.xp[1]}">${objectItem.xp[1]}</span></p>    
+          <p><img id="imgRecipe" src="${objectItem.img}"><i>-</i>${objectItem.name} <span id="itemDefaultQuantidade">${objectItem.quantity}</span></p>
+          <p><img id="imgRecipe" src="${objectItem.xp[0]}"><i>-</i>Xp <span id="itemXp" data-id="${objectItem.xp[1]}">${objectItem.xp[1]}</span></p>    
       </div>
     </div>
     <div class="buttonRangeContainer">
@@ -224,7 +224,7 @@ const createCalculaotor = (objectItem) => {
     const progressPercentage = (currentXP / nextLevelXP) * 100; // Limita o preenchimento a 100%
 
     progressBar.style.width = `${progressPercentage}%`; // Atualiza a largura da barra de progresso
-    progressText.textContent = `${currentXP} / ${nextLevelXP.toLocaleString("pt-BR")}`;
+    progressText.textContent = `${currentXP.toLocaleString("pt-BR")} / ${nextLevelXP.toLocaleString("pt-BR")}`;
   }
 
   function updatePage() {
