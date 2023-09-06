@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>HeartWood Wiki</title>
-    <link rel="shortcut icon" href="./img/h2-favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/styles.css" />
+
+    <link href="./img/h2-favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/container-app.css">
+    <link rel="stylesheet" href="css/header-box.css">
+    <link rel="stylesheet" href="css/container-category-buttons.css">
+    <link rel="stylesheet" href="css/container-cauculator.css">
+    <link rel="stylesheet" href="css/container-select-category-items.css">
+    <link rel="stylesheet" href="css/container-caulculator-body.css">
+    <link rel="stylesheet" href="css/container-action-buttons.css">
   </head>
+
   <body>
+
     <header class="header-box">
       <img src="../img/heartwood_wiki.png" width="300px" height="100"="heartwood-logo">
     </header>
+
     <div id="bar-brown"></div>
-    <div class="containerBody">
-      <nav class="navbar">
-        <button class="btn-nav" id="btnTailoring">TAILORING</button>
-        <button class="btn-nav" id="btnBlacksmithing">BLACKSMITHING </button>
-        <button class="btn-nav" id="btnCarpentry">CARPENTRY</button>
-        <button class="btn-nav" id="btnLeatherworking">LEATHERWORKING</button>
-      </nav>
-      <div class="content-card-body">
-        <div class="category-box">
-          <div class="box-title">
-            <h1>Category</h1>
-          </div>
-          <div class="containerCategory">
-            <div class="button-container">
-            </div>
-          </div>
-        </div>
-        <div class="crafting-calculator-box">
-          <div class="box-title">
-            <h1>Crafting Calculator</h1>
-          </div>
-          <div class="containerCalculator">
-          </div>
-        </div>
+
+
+    <div class="container-app">
+
+      <div class="container-category-buttons">
+        <button class="btn-nav" id="tailoring">TAILORING</button>
+        <button class="btn-nav" id="blacksmithing">BLACKSMITHING </button>
+        <button class="btn-nav" id="carpentry">CARPENTRY</button>
+        <button class="btn-nav" id="leatherworking">LEATHERWORKING</button>
       </div>
+      
+      <div class="container-cauculator">
+
+        <div class="container-select-category-items">
+          <div class="box-title"> <h1> Category </h1> </div>
+          <div class="button-container"> </div>
+        </div>
+ 
+        <div class="container-caulculator-body">
+          <div class="box-title"> <h1> Crafting Calculator </h1> </div>
+          <div class="content-calculator-body">
+
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
+
+    <script type="module" src="main.js"></script>
   </body>
 </html>
 
-<script type="module" src="../js/script.js"></script>
+
