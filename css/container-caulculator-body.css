@@ -1,0 +1,165 @@
+.container-caulculator-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.content-calculator-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: .7rem;
+  overflow-y: auto;
+  background-color: var(--dark-bronw);
+  box-shadow: 0px 4px var(--dark-bronw-hsl);
+  border-radius: 0px 0px 5px 5px;
+}
+
+.separate-div{
+  width: 100%;
+  height: 100%;
+}
+
+#level, #lastlevel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress {
+  width: 100%;
+  height: 30px;
+  display: grid;
+  grid-template-columns: 30px auto 30px;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: var(--medium-brown);
+  padding: .2rem;
+  border-radius: 5px;
+  box-shadow: 0px 3px  var(--medium-brown-hsl);
+}
+
+.progress-bar {
+  width: 0;
+  margin: 0;
+  height: 100%;
+  background-color: var(--mediun-green);
+  transition: all .5s;
+  border-radius: 5px;
+}
+
+#progressText{
+  position: absolute;
+  width: 200px;
+  margin: 5px 260px; 
+}
+
+.cardItemHeader {   
+  width: 100%;
+  height: 50px;
+  display: grid;
+  margin-top: .5rem;
+  grid-template-columns: 50px auto;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.cardItemHeader > div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  background-color: var(--medium-brown);
+  box-shadow: 0px 3px  var(--medium-brown-hsl);
+}
+
+.cardItemHeader > div > img{
+  width: 25px;
+  height: 25px;
+}
+
+#itemName, #itemDesc{
+  padding-left: 1rem;
+}
+
+
+.cardItemBody{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.content-recipe > h2 , .content-receive > h2 {
+  background-color: var(--mediun-green);
+  padding: .3rem;
+  margin-bottom: .3rem;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 3px 0 var(--medium-green-hls);
+}
+
+.content-recipe, .content-receive {
+  width: 100%;
+  gap: .3rem;
+}
+
+.itemRecipe , .itemReceive > div{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 80% 15%;
+  justify-content: start;
+  align-items: center;
+  padding: .3rem;
+  font-size: 1.1rem;
+  background-color: var(--medium-brown);
+  margin-bottom: 1px;
+}
+
+.itemRecipe > img{
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.qtd{
+  width: 100%;
+  text-align: end;
+  padding-right: .3rem;
+}
+
+
+@media only screen and (max-width: 1100px) {
+  .container-caulculator-body{
+    width: 100%;
+    transition: all 700ms;
+  }
+  #progressText{
+    position: absolute;
+    width: 200px;
+    margin: 5px 150px; 
+  }
+}
+
+@media only screen and (max-width:  600px) {
+  #progressText{
+    position: absolute;
+    width: 200px;
+    margin: 4px 70px; 
+  }
+  .itemRecipe , .itemReceive > div{
+    grid-template-columns: 10% 50% 40%;
+  }
+  .cardItemHeader{
+    margin: .4rem 0;
+    height: 35px;
+    font-size: .8rem;
+  }
+  .cardItemHeader > div > img{
+    width: 20px;
+    height: 20px;
+  }
+}

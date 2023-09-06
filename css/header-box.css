@@ -1,0 +1,15 @@
+.header-box{
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mediun-green);
+}
+
+#bar-brown{
+  height: 20px;
+  width: 100%;
+  background-color: var(--dark-bronw);
+}
