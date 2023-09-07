@@ -17,3 +17,11 @@
     border-radius: 10px;
   }
 }
+
+@media only screen and (max-height: 770px) {
+  .container-app{
+    width: 90%;
+    height: 70vh;
+    transition: all 300ms;
+  }
+}
