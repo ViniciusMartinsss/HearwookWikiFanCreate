@@ -9,7 +9,36 @@
 }
 
 #bar-brown{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
   height: 20px;
   width: 100%;
   background-color: var(--dark-bronw);
+  
+}
+
+#bar-brown > div {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+  font-size: .8rem;
+  width:auto;
+  transition: all .4s;
+}
+
+#bar-brown > div > a{
+  transition: all .4s;
+}
+
+#bar-brown > div > a:hover{
+  color: aqua;
+  text-decoration: underline;
+  transition: all .4s;
+}
+
+#bar-brown > div > svg {
+  width: 12px;
+  height: 12px;
 }

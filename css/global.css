@@ -1,5 +1,5 @@
 *{
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: white;
@@ -19,6 +19,10 @@
   --medium-brown-hsl: hsl(39, 33%, 42%);
   --dark-bronw-hsl:hsl(36, 33%, 20%);
   --shadow-black: rgba(0, 0, 0, 0.300);
+}
+
+a{
+  text-decoration: none;
 }
 
 span{
@@ -69,6 +73,7 @@ body{
 -webkit-appearance: none;
 margin: 0;
 }
+
 
 .box-title{
   min-height: 45px;
