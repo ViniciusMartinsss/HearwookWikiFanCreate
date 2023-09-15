@@ -38,7 +38,7 @@ categoryButtons.forEach((button) => {
     createCategory(data);
 
     const itemClicked = document.querySelector(".itemClicked");
-    const listClicked = document.getElementsByTagName("A");
+    const listClicked = document.getElementsByClassName("item-link");
     itemClicked.click();
     listClicked[0].click();
   });
