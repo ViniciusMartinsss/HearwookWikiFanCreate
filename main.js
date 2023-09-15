@@ -138,7 +138,7 @@ const createCalculator = (objectItem) => {
       <div class="progress">
         <span id="level"></span>
         <div class="progress-bar">
-          <div id="progressText"></div>
+          <div id="progressText"> 0 / 0 XP</div>
         </div>
         <span id="lastlevel"></span>
       </div>
@@ -263,11 +263,11 @@ const createCalculator = (objectItem) => {
       progressPercentage = Math.min(progressPercentage, 100);
   
       progressBar.style.width = `${progressPercentage}%`;
-      progressText.textContent = `${totalXPRequired.toLocaleString("pt-BR")} / ${totalXPRequired.toLocaleString("pt-BR")} XP`;
+      progressText.textContent = `${totalXPRequired.toLocaleString("pt-BR")} XP`;
     } else {
       // Se atingir o nível máximo, a barra de progresso deve estar cheia
       progressBar.style.width = "100%";
-      progressText.textContent = `${totalXPRequired.toLocaleString("pt-BR")} / ${totalXPRequired.toLocaleString("pt-BR")} XP (Max Level)`;
+      progressText.textContent = `${totalXPRequired.toLocaleString("pt-BR")} XP (Max Level)`;
     }
     const xpInfo = document.querySelector("#itemDefaultXp");
     xpInfo.textContent = `${totalXPRequired.toLocaleString("pt-BR")}`;
