@@ -1,18 +1,16 @@
 const leatherworkingItems = [
+  // ! -------------- ITEMS ----------------
+
   {
     id: 0,
-    name: "Light Cotton Fabric",
-    descript: "Ervas que são usadas em várias poções.",
+    name: "Flimsy Leather",
+    descript: "",
     category: "Items",
     recipe: {
       materials: [
         {
-          item_id: 1,
-          quantity: 3
-        },
-        {
-          item_id: 0,
-          quantity: 8
+          item_id: 13,
+          quantity: 2
         }
       ]
     },
@@ -20,26 +18,72 @@ const leatherworkingItems = [
     level: 1,
     quantity: 1,
     xp: 203,
-    src: "../img/tailoring-icons/light_cotton_fabric.png"
+    src: "../img/leatherworking-icons/FlimsyLeather.icon.png"
   },
+
+  // ! -------------- CHEST ----------------
+
   {
     id: 1,
-    name: "Thread",
-    descript: "Ervas que são usadas em várias poções.",
+    name: "Flimsy Coat",
+    descript: "",
     category: "Chest",
     recipe: {
       materials: [
         {
-          item_id: 1,
-          quantity: 6
-        },
+          item_id: 13,
+          quantity: 8
+        }
       ]
     },
     tier: 1,
-    level: 3,
+    level: 9,
     quantity: 1,
-    xp: 504,
-    src: "../img/tailoring-icons/thread.png"
+    xp: 420,
+    src: "../img/leatherworking-icons/FlimsyCoat.icon.png"
+  },
+
+  // ! -------------- LEGS ----------------
+
+  {
+    id: 2,
+    name: "Flimsy Strides",
+    descript: "",
+    category: "Legs",
+    recipe: {
+      materials: [
+        {
+          item_id: 13,
+          quantity: 12
+        }
+      ]
+    },
+    tier: 1,
+    level: 9,
+    quantity: 1,
+    xp: 665,
+    src: "../img/leatherworking-icons/FlimsyStrides.icon.png"
+  },
+
+  // ! -------------- LEGS ----------------
+  {
+    id: 3,
+    name: "Flimsy Boots",
+    descript: "",
+    category: "Feet",
+    recipe: {
+      materials: [
+        {
+          item_id: 13,
+          quantity: 6
+        }
+      ]
+    },
+    tier: 1,
+    level: 9,
+    quantity: 1,
+    xp: 665,
+    src: "../img/leatherworking-icons/FlimsyBoots.icon.png"
   }
 ]
 
