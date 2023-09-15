@@ -71,7 +71,7 @@ margin: 0;
 }
 
 .box-title{
-  height: 50px;
+  min-height: 45px;
   width: 100%;
   background-color: var(--medium-brown);
   display: flex;
